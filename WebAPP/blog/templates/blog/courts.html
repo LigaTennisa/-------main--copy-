@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+	
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теннисные корты в Тюмени</title>
+    <style>
+        .court-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Данные о теннисных кортах в Тюмени</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Теннисные корты в Тюмени</h1>
+  
+  <div class="court-card">
+    <img src="" alt="Корт 1" >
+    <h2>Теннисный корт 1</h2>
+    <p>Адрес: ул. Примерная, 15</p>
+    <p>Тип покрытия: хард</p>
+    <p>Цена: 1000 руб./час</p>
+  </div>
+  
+  <div class="court-card">
+    <img src="court2.jpg" alt="Корт 2">
+    <h2>Теннисный корт 2</h2>
+    <p>Адрес: ул. Образцовая, 7</p>
+    <p>Тип покрытия: грунт</p>
+    <p>Цена: 800 руб./час</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+</head>
+<body>
+    <h1>Создать форму</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title.label_tag }}{{ form.title }}
+        <br>
+        {{ form.court.label_tag }}{{ form.court }}
+        <br>
+        {{ form.training_date.label_tag }}{{ form.training_date }}
+        <br>
+        {{ form.training_time.label_tag }}{{ form.training_time }}
+        <br>
+        {{ form.preferences.label_tag }}{{ form.preferences }}
+        <br>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <!-- Кнопка "Назад" -->
+    <a href="{% url 'find_partner' %}">Назад</a>
+</body>
+</html>
+{% endblock content %}

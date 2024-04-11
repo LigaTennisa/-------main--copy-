@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+body {
+    height:1080px;
+    width:100%;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    justify-content: center;
+}
+
+.nav-list {
+    position:relative;
+    top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+    justify-content: center;
+    white-space: nowrap;
+    color: black;
+    flex-grow: 0;
+}
+
+.nav-link {
+    text-align: center;
+    position: relative; 
+    top: 100px;
+    display: inline-block;
+    column-gap: 30px;
+    color: black;
+    font-size: 21px;
+}
+
+.btnregistr {
+    position: absolute;
+    top: 20px; 
+    right: 0px;
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.btnlogin {
+    position: absolute;
+    top: 20px; 
+    right: 180px;
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.logo-img {
+    position: absolute;
+    top: 0px; 
+    left: 0px;
+}
+
+.ligatennisa {
+    position: absolute;
+    top: 10px; 
+    left: 120px;
+    color:black;
+    text-decoration: none;
+}
+
+/* выдвигающаяся навигация */
+
+/* .btn-close {
+
+} */
+/* нижняя навигация */
+
+.navbar-toggler-icon {
+    top: 80px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100vh;
+}
+footer{
+    position: relative;
+    width: 100%;
+    padding: 20px 50px;
+    background: white;
+    display: flex;
+    justify-content: center;/*в центре по горизонтали*/
+    align-items: center;/*в центре по вертикали*/
+    flex-direction: column;
+    margin-top: 100px;
+}
+.social,
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.social li,
+.menu li{
+    list-style: none;
+}
+.social li a {
+    font-size: 2em;
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.menu li a {
+    font-size: 1.2em;
+    color: black;
+    opacity: 0.75;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+.menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+} 

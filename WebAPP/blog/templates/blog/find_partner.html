@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Найти партнера</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/find_partner.css'%}" type="text/css">
+</head>
+
+<body>
+  <div><h1 class="find" style = "transform: translate(35%, 1350%); color:black;">Найти партнера</h1>
+    <div class="card-container">
+        <div>
+          <h2 class = "myforms" style = "transform: translate(5%, 2300%);">Мои формы:</h2>
+          {% for post in posts %}
+            {% if request.user.is_authenticated and request.user == post.author %}
+              <div class="myforms-card" style = "transform: translate(-30%, 200%);">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.author.first_name }} {{ post.author.last_name }}</p>
+                <p>Корт: {{ post.court }}</p>
+                <p>Дата: {{ post.training_date }}</p>
+                <p>Время: {{ post.training_time }}</p>
+                <p>Пожелания: {{ post.preferences }}</p>
+                <small>{{ post.published_at | date:"M d, Y" }}</small>
+                <p>
+                  <a href="{% url 'post-edit' post.id %}">Редактировать</a>
+                  <a href="{% url 'post-delete' post.id %}">Удалить</a>
+                </p>
+
+                <h4>Отклики:</h4>
+                <ul>
+                  {% for responder in post.responders.all %}
+                    <li><a href="{% url 'user_profile' responder.id %}">{{ responder.first_name }} {{ responder.last_name }}</a></li>
+                    {% if request.user == post.author %}
+                      <form method="post" action="{% url 'accept_responder' post.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="responder_id" value="{{ responder.id }}">
+                        <button type="submit">Принять</button>
+                      </form>
+                      <form method="post" action="{% url 'cancel_responder' post.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="responder_id" value="{{ responder.id }}">
+                        <button type="submit">Отменить</button>
+                      </form>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div>
+          <h2 class = "otherforms" style = "transform: translate(70%, -590%);">Формы других пользователей:</h2>
+          {% for post in posts %}
+            {% if request.user.is_authenticated and request.user != post.author %}
+              <div class="otherforms-card" style = "transform: translate(90%, -10%);">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.author.first_name }} {{ post.author.last_name }}</p>
+                <p>Корт: {{ post.court }}</p>
+                <p>Дата: {{ post.training_date }}</p>
+                <p>Время: {{ post.training_time }}</p>
+                <p>Пожелания: {{ post.preferences }}</p>
+                <small>{{ post.published_at | date:"M d, Y" }}</small>
+                {% if request.user in post.responders.all %}
+                  <form method="post" action="{% url 'cancel_responder' post.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="responder_id" value="{{ request.user.id }}">
+                    <button type="submit">Отменить отклик</button>
+                  </form>
+                {% else %}
+                  <form method="post" action="{% url 'respond_to_post' post.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="responder_id" value="{{ request.user.id }}">
+                    <button type="submit">Откликнуться</button>
+                  </form>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'add_post' %}" style = "transform: translate(-40%, -15000%); color:black; text-decoration:none; font-size:25px;">Создать форму</a> <!-- Кнопка "плюсик" для добавления публикации -->
+  </div>
+
+</body>
+{% endblock content %}

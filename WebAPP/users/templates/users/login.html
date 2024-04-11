@@ -1,0 +1,86 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Авторизация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/login.css'%}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/navigation.css'%}" type="text/css">
+</head>
+
+
+
+<body>
+  <main>
+
+	<div class="circle"></div>
+  
+    <div class ="login-form-container" style="position:absolute; top: 200px">
+      
+      <div class = "form-fields">	
+
+        <form method="POST">
+          {% csrf_token %}
+          <h1 class = "form-title">
+            Авторизация
+          </h1>
+          
+          <div class = "form-field" class="form-control">
+            {{form.as_p}}
+            
+          </div>
+          <div class = "form-buttons">
+            <input type="submit" value="Войти" class ="button" />
+          </div>
+        </form>
+
+	<div>
+		<a href="#" class = "help" >Забыли пароль?</a><a href="/register" class = "help" >Создать аккаунт</a>
+	</div>
+	<hr>
+	<div class="text-center">
+		<p>Или авторизуйтесь через:</p>
+		<a href="#" class="btn btn-white">
+		<img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/10110/10110386.png" alt="Catalog Icon" width="32" height="32">
+		Google
+		</a>
+		<a href="#" class="btn btn-white">
+		<img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/5968/5968893.png" alt="Catalog Icon" width="32" height="32">
+		VK
+		</a>
+		<a href="#" class="btn btn-white">
+		<img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png" alt="Catalog Icon" width="32" height="32">
+		GitHub
+		</a>
+	</div>
+  </main>
+
+  <footer>
+    <div>
+    	<ul class = "menu">
+            <li><a href="/aboutus">О нас</a></li>
+            <li><a href="/contact">Контакты</a></li>
+            <li><a href="">Политика конфиденциальности</a></li>
+            
+        </ul>
+        <ul class = "social">
+          <li><a href="#"> <img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png" alt="Insta Icon" width="32" height="32"></a></li>
+          <li><a href="#"> <img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/25/25684.png" alt="VK Icon" width="32" height="32"></a></li>
+          <li><a href="#"> <img class="mx-1" src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="TG Icon" width="32" height="32"></a></li>
+        </ul>
+	  <p>©2024. Все права защищены</p>
+    </div>
+</footer>
+
+
+  
+</body>
+
+</html>
+{% endblock content%}

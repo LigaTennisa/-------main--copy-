@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Удалить форму</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  <p>Вы уверены, что хотите удалить эту форму "{{post.title}}"?</p>
+  <div>
+    <button type="submit">Да, удалить</button>
+    <a href="{% url 'find_partner' %}">Отмена</a>  <!-- Измененная ссылка на find_partner.html -->
+  </div>
+</form>
+
+{% endblock content %}

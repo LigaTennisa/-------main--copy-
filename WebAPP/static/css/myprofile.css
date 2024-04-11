@@ -1,0 +1,215 @@
+body{
+    margin: 0;
+	background-color: white;
+}
+
+.card-container{
+    margin: auto;
+    max-width: 1200px;
+    padding: 0px 0px;
+}
+
+.circle{
+    position: absolute;
+    display: flex;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 3000px;
+    height: 3000px ;
+    border-radius: 50% ;
+    background: white;
+    box-shadow: 0px 4px 70px 6px rgba(168,228,160);
+    animation-name: fadeCircle;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeCircle{
+    0% {
+        width: 2534px;
+        height: 2534px;
+    }
+    25% {
+        width: 2000px;
+        height: 2000px;
+    }
+    50% {
+        width: 1500px;
+        height: 1500px;
+    }
+    75% {
+        width: 1300px;
+        height: 1300px;
+    }
+    100% {
+        width: 900px;
+        height: 900px;
+    }
+}
+
+.card-container {
+    flex-basis: 50%;
+	border-radius: 33px;
+	padding: 2rem !important; 
+    font-family: Montserrat;
+    opacity: 0;
+    transform: translate(0%, 0%);
+    position: relative;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    min-width: 60% !important;
+    min-height: 70% !important;
+    max-width: 60%;
+    max-height: max-content;
+    background: #ffffff;
+    box-shadow: 0px 6px 50px rgba(168,228,160);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    animation-name: fadeForm;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeForm{
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.top-container{
+    flex-basis: 50%;
+    width: 40%;
+    height: 70%;
+	align-items: center;
+}
+
+.profile-image{
+    flex-basis: 50%;
+    position: relative;
+    transform: translate( 0%, 0%);
+	border-radius: 10px;
+	border: 2px solid #e3f0e9;
+}
+
+.name{
+    position: relative;
+	font-size: 25px;
+	font-weight: medium;
+    white-space: nowrap; /* в одну строчку */
+    transform: translate(110%, -500%);
+	color: #272727;
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.middle-container{
+    flex-basis: 50%;
+    transform: translate(120%, -200%);
+    white-space: nowrap; /* в одну строчку */
+    width: 40%;
+	background-color: white;
+	border-radius: 12px;
+}
+.middle-container:hover {
+	border: 1px solid #53e453;
+}
+
+button a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.ads {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border-radius: 33px;
+	padding: 2rem !important; 
+    font-family: Montserrat;
+    word-break: break-all;
+    opacity: 0;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    background: #ffffff;
+    box-shadow: 0px 6px 50px rgba(168,228,160);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    animation-name: fadeForm;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeForm{
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.ads-border{
+    flex-basis: 50%;
+    margin-bottom: auto;
+    display: block;
+	align-items: center;
+}
+
+/* пока убрали */
+
+/* .post.author-border{
+	font-size: 16px;
+	font-weight: 700;
+	color: #272727;
+
+}
+
+.post.author-border:hover{
+	border-bottom: 1px solid #dee2e6!important;
+} */
